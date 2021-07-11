@@ -21,7 +21,9 @@ class TomlConfig(Config):
         bot = config["bot"]
         self.bot = bot["bot"]
         self.token = bot["token"]
-        self.csv_data_base = bot["csv_data_base"]
+        self.json_data_base = bot["json_data_base"]
 
-        self.servers = condif["servers"]
+        self.servers = config["servers"]
+
+config = TomlConfig("config.toml", "config.template.toml")
         

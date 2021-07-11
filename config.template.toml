@@ -1,13 +1,14 @@
 [bot]
 bot = true
 token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-csv_data_base = "XXX"
+json_data_base = "XXX"
 
 [servers]
 
-    [staf]
+    [servers.staf]
         id = "XXXXXXXXXXXXXXXXXX"
         cat = "XXXXXXXXXXXXXXXXXX"
-        channels = "XXXXXXXXXXXXXXXXXX"
-        commandes = "XXXXXXXXXXXXXXXXXX"
+        channels_bloque = "XXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX"
+        channel_creation = "XXXXXXXXXXXXXXXXXX"
+
 
