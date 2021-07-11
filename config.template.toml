@@ -1,0 +1,13 @@
+[bot]
+bot = true
+token = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+csv_data_base = "XXX"
+
+[servers]
+
+    [staf]
+        id = "XXXXXXXXXXXXXXXXXX"
+        cat = "XXXXXXXXXXXXXXXXXX"
+        channels = "XXXXXXXXXXXXXXXXXX"
+        commandes = "XXXXXXXXXXXXXXXXXX"
+
