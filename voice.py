@@ -167,7 +167,7 @@ async def claim(member):
         member.id)][3]]["channels_bloque"].split(' ')
     if chan is not None:
         chan = member.voice.channel
-        if (chan.category_id, int(config.servers[data[str(member.id)][3]]["cat"]) and
+        if (chan.category_id == int(config.servers[data[str(member.id)][3]]["cat"]) and
                 not(str(chan.id) in ban_channel)):
             if (str(member.id) in data and data[str(member.id)][1] == chan.id):
                 for memberkey in data:
