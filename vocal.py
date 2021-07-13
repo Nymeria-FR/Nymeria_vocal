@@ -10,8 +10,9 @@ client = discord.Client()
 async def on_message(message):
     if message.author.id != client.user.id:
         if message.content.startswith("n!voice"):
-            reponse = await voice_commande(message)
-            await message.channel.send(reponse)
+            reponse = await voice_commande(client, message)
+            if reponse is not None and reponse != "":
+                await message.channel.send(reponse)
 
 
 @client.event

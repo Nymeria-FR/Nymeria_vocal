@@ -51,8 +51,12 @@ async def voic_event_traitment(member, before, after, client):
     save(data_channel)
 
 
-async def voice_commande(message):
-    if message.content == "n!voice lock":
+async def voice_commande(client, message):
+    if message.content == "n!voice help":
+        await help(client, message)
+        await message.delete()
+        return None
+    elif message.content == "n!voice lock":
         return await lock(message.author)
     elif message.content == "n!voice unlock":
         return await unlock(message.author)
@@ -189,3 +193,42 @@ async def claim(member):
         return "{}\nTu n'es pas dans un channel créé par nymeria vocal bot".format(
             member.mention)
     return "{}\nTu n'es connecté a aucun channel".format(member.mention)
+
+async def help(client, message):
+    for server, data in config.servers.items():
+        guild = server
+        if message.guild.id == int(data["id"]):
+            break
+    channel = client.get_channel(int(data["channel_creation"]))
+    des = f"""Rejoins le salon vocal en dessous pour créer ton propre vocal privé,
+Voici une liste des commandes que tu peux faire dans le channel
+{channel.mention}
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+**n!voice lock**
+Empeche plus de personnes de rejoindre le vocal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+**n!voice unlock**
+Ouvre ton salon pour que d'autres puissent rejoindre
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+**n!voice name <nomduchannel>**
+Change le nom du vocal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+**n!voice limit <nombre>**
+Fixe une limite du nombre d'utilisateurs maximal pouvant rejoindre le vocal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+**n!voice permit <@utilisateur>**
+Permet à un utilisateur particulier de rejoindre le vocal
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+**n!voice reject <@utilisateur>**
+Empêche un utilisateur de rejoindre votre salon et l'expulse s'il y est déjà
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+**n!voice claim**
+Permet de s'approprier le salon vocal si son créateur l'a quitté
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+"""
+    embedVar = discord.Embed(
+        title="Commandes",
+        description=des,
+        color=0xF7AF00
+    )
+    await message.channel.send(embed=embedVar)
