@@ -17,7 +17,7 @@ Bot discord fait pour gérer les channels *crée ton vocal :*
 | n!voice unlock | Ouvre ton salon pour que d'autres puissent rejoindre |
 | n!voice name *nomduchannel* | Change le nom du vocal |
 | n!voice limit *nombre* | Fixe une limite du nombre d'utilisateurs maximal pouvant rejoindre le vocal |
-| n!voice permit *@utilisateur* | Permets à un utilisateur particulier de rejoindre le vocal |
+| n!voice permit *@utilisateur* | Permet à un utilisateur particulier de rejoindre le vocal |
 | n!voice reject *@utilisateur* | Empêche un utilisateur de rejoindre votre salon et l'expulse s'il y est déjà |
 | n!voice claim | Permets de s'approprier le salon vocal si son créateur l'a quitté |
 
