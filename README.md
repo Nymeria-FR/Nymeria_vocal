@@ -50,6 +50,6 @@ json_data_base = "chemain vers le fichier json déjà crée"
 [servers."nom"]
     id = "id du serveur"
     cat = "catégorie contenant le catégorie du channel crée ton vocal"
-    channels_bloque = "channels qui ne doivent pas être suprimé dans la catégorie"
+    channels_bloque = "channels qui ne doivent pas être supprimé dans la catégorie"
     channel_creation = "channel crée ton vocal"
 ```
