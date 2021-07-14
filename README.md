@@ -43,9 +43,9 @@ json_data_base = "XXX"
 
 ```toml
 [bot]
-bot = "self bot ou pas
+bot = "self bot ou pas"
 token = "token"
-json_data_base = chemain vers le fichier json déjà crée
+json_data_base = "chemain vers le fichier json déjà crée"
 
 [servers."nom"]
     id = "id du serveur"
