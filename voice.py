@@ -45,7 +45,8 @@ async def voic_event_traitment(member, before, after, client):
                                               manage_channels=True)
     if before.channel is not None:
         if (str(before.channel.category.id) == config.servers[data_channel[str(member.id)][3]]["cat"] and
-                str(before.channel.id) not in ban_channel):
+                str(before.channel.id) not in ban_channel and
+                len(before.channel.members) == 0):
             await before.channel.delete()
             data_channel[str(member.id)][1] = 0
     save(data_channel)
