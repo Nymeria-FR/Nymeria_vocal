@@ -1,4 +1,6 @@
-import os, toml
+import os
+import toml
+
 
 class Config:
     def get_path(self, name):
@@ -10,6 +12,7 @@ class Config:
             print(f"config {file_name} doesn't exist, copying template!")
             shutil.copyfile(self.get_path(template_name), config_file)
         return config_file
+
 
 class TomlConfig(Config):
     def __init__(self, file_name, template_name):
@@ -25,5 +28,5 @@ class TomlConfig(Config):
 
         self.servers = config["servers"]
 
+
 config = TomlConfig("config.toml", "config.template.toml")
-        
