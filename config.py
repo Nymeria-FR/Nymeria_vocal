@@ -24,7 +24,7 @@ class TomlConfig(Config):
         bot = config["bot"]
         self.bot = bot["bot"]
         self.token = bot["token"]
-        self.json_data_base = bot["json_data_base"]
+        self.json_data_base = os.path.join(os.path.dirname(os.path.realpath(__file__)), bot["json_data_base"])
 
         self.servers = config["servers"]
 
